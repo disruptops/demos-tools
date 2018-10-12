@@ -1,0 +1,137 @@
+{
+  "Comment": "An example of the Amazon States Language using a parallel state to execute two branches at the same time.",
+  "StartAt": "Parallel",
+  "States": {
+    "Parallel": {
+      "Type": "Parallel",
+      "Next": "Assessment Complete",
+      "Branches": [
+        {
+          "StartAt": "us-east-1",
+          "States": {
+            "us-east-1": {
+              "Type": "Task",
+              "InputPath": "$.region[0]",
+               "Resource":
+                 "REPLACEME",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "us-east-2",
+          "States": {
+            "us-east-2": {
+              "Type": "Task",
+              "InputPath": "$.region[1]",
+               "Resource":
+                 "REPLACEME",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "us-west-1",
+          "States": {
+            "us-west-1": {
+              "Type": "Task",
+              "InputPath": "$.region[2]",
+               "Resource":
+                 "REPLACEME",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "us-west-2",
+          "States": {
+            "us-west-2": {
+              "Type": "Task",
+              "InputPath": "$.region[3]",
+               "Resource":
+                 "REPLACEME",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "ca-central-1",
+          "States": {
+            "ca-central-1": {
+              "Type": "Task",
+              "InputPath": "$.region[4]",
+               "Resource":
+                 "REPLACEME",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "eu-west-1",
+          "States": {
+            "eu-west-1": {
+              "Type": "Task",
+              "InputPath": "$.region[5]",
+               "Resource":
+                 "REPLACEME",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "eu-west-2",
+          "States": {
+            "eu-west-2": {
+              "Type": "Task",
+              "InputPath": "$.region[6]",
+               "Resource":
+                 "REPLACEME",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "eu-central-1",
+          "States": {
+            "eu-central-1": {
+              "Type": "Task",
+              "InputPath": "$.region[7]",
+               "Resource":
+                 "REPLACEME",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "ap-southeast-1",
+          "States": {
+            "ap-southeast-1": {
+              "Type": "Task",
+              "InputPath": "$.region[8]",
+               "Resource":
+                 "REPLACEME",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "ap-southeast-2",
+          "States": {
+            "ap-southeast-2": {
+              "Type": "Task",
+              "InputPath": "$.region[9]",
+               "Resource":
+                 "REPLACEME",
+              "End": true
+            }
+          }
+        }
+      ]
+    },
+    "Assessment Complete": {
+      "Type": "Pass",
+      "End": true
+    }
+  }
+}
+
